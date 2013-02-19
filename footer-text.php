@@ -5,6 +5,8 @@
  * Description: Allow changing of the footer text easily from the dashboard
  * Author: Shea Bunge
  * Author URI: http://bungeshea.com
+ * License: MIT
+ * License URI: http://opensource.org/licenses/mit-license.php
  * Version: 1.0
  */
 
