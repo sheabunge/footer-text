@@ -102,3 +102,47 @@ function footer_text( $before = '', $after = '', $display = true ) {
         return $output;
 
 }
+
+/** Shortcodes ********************************************************/
+
+/**
+ * Returns a formatted link to
+ * the current page's permalink
+ *
+ * @uses get_permalink()
+ *
+ * @return string
+ *
+ * @since 1.0
+ */
+function footer_text_shortcode_permalink() {
+    $label = ( isset( $atts ) ? (string) $atts : get_permalink() );
+    return sprintf ( '<a href="%1$s">%2$s</a>', get_permalink(), $label );
+}
+
+/**
+ * Returns the date when the current page
+ * was last modified
+ *
+ * @uses the_modified_date()
+ *
+ * @return string
+ *
+ * @since 1.0
+ */
+function footer_text_shortcode_last_modified() {
+    return the_modified_date( 'd/m/Y', '<time>', '</time>', false );
+}
+
+/**
+ * Registers our shortcodes with WordPress
+ *
+ * @uses add_shortcode()
+ *
+ * @since 1.0
+ */
+function add_footer_text_shortcodes() {
+    add_shortcode( 'last_modified', 'footer_text_shortcode_last_modified' );
+    add_shortcode( 'page_link', 'footer_text_shortcode_permalink' );
+}
+add_action( 'init', 'add_footer_text_shortcodes' );
