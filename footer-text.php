@@ -18,15 +18,17 @@
  *
  * @uses add_theme_page() To register the new submenu
  *
+ * @return void
+ *
  * @since 1.0
  */
 function add_footer_text_options_page() {
 	$theme_page = add_theme_page(
-		__( 'Footer Text', 'footer-text' ),	// Name of page
-		__( 'Footer Text', 'footer-text' ),	// Label in menu
-		'edit_theme_options',          		// Capability required
-		'footer-text', 	               		// Menu slug, used to uniquely identify the page
-		'render_footer_text_options_page'	// Function that renders the options page
+		__( 'Footer Text', 'footer-text' ), // Name of page
+		__( 'Footer Text', 'footer-text' ), // Label in menu
+		'edit_theme_options',               // Capability required
+		'footer-text',                      // Menu slug, used to uniquely identify the page
+		'render_footer_text_options_page'   // Function that renders the options page
 	);
 }
 add_action( 'admin_menu', 'add_footer_text_options_page' );
@@ -40,6 +42,8 @@ add_action( 'admin_menu', 'add_footer_text_options_page' );
  * @uses wp_editor() For a visual editor
  * @uses get_option() To retrieve the current text from the database
  * @uses submit_button() To generate a form submit button
+ *
+ * @return void
  *
  * @since 1.0
  */
@@ -74,8 +78,8 @@ function render_footer_text_options_page() {
  *
  * @since 1.0
  */
-function get_footer_text() {
-	return apply_filters( 'the_content', get_option( 'theme_footer_text', '' ) );
+function get_footer_text( $default = '' ) {
+	return apply_filters( 'the_content', get_option( 'theme_footer_text', $default ) );
 }
 
 /**
@@ -86,21 +90,17 @@ function get_footer_text() {
  *
  * @param string $before The text to display before the footer text
  * @param string $after The text to display after the footer text
- * @param bool $display Output or return the resulting text?
- * @return null|string The footer text if $output is true
+ * @param string $default What to display if no text is set
+ * @return void
  *
  * @since 1.0
  */
-function footer_text( $before = '', $after = '', $display = true ) {
+function footer_text( $before = '', $after = '', $default = '' ) {
 
-    $footer_text = get_footer_text();
-    $output = ( empty( $footer_text ) ? '' : $before . $footer_text . $after );
+	$footer_text = get_footer_text( $default );
+	$output = ( empty( $footer_text ) ? '' : $before . $footer_text . $after );
 
-    if ( $display )
-	    echo $output;
-    else
-        return $output;
-
+	echo $output;
 }
 
 /** Shortcodes ********************************************************/
@@ -116,8 +116,8 @@ function footer_text( $before = '', $after = '', $display = true ) {
  * @since 1.0
  */
 function footer_text_shortcode_permalink() {
-    $label = ( isset( $atts ) ? (string) $atts : get_permalink() );
-    return sprintf ( '<a href="%1$s">%2$s</a>', get_permalink(), $label );
+	$label = ( isset( $atts ) ? (string) $atts : get_permalink() );
+	return sprintf ( '<a href="%1$s">%2$s</a>', get_permalink(), $label );
 }
 
 /**
@@ -131,7 +131,7 @@ function footer_text_shortcode_permalink() {
  * @since 1.0
  */
 function footer_text_shortcode_last_modified() {
-    return the_modified_date( 'd/m/Y', '<time>', '</time>', false );
+	return the_modified_date( 'd/m/Y', '<time>', '</time>', false );
 }
 
 /**
@@ -142,7 +142,7 @@ function footer_text_shortcode_last_modified() {
  * @since 1.0
  */
 function add_footer_text_shortcodes() {
-    add_shortcode( 'last_modified', 'footer_text_shortcode_last_modified' );
-    add_shortcode( 'page_link', 'footer_text_shortcode_permalink' );
+	add_shortcode( 'last_modified', 'footer_text_shortcode_last_modified' );
+	add_shortcode( 'page_link', 'footer_text_shortcode_permalink' );
 }
 add_action( 'init', 'add_footer_text_shortcodes' );
