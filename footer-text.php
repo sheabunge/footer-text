@@ -105,6 +105,8 @@ function footer_text( $before = '', $after = '', $default = '' ) {
 
 /** Shortcodes ********************************************************/
 
+if ( function_exists( 'add_shortcode' ) ) :
+
 /**
  * Returns a formatted link to
  * the current page's permalink
@@ -146,3 +148,5 @@ function add_footer_text_shortcodes() {
 	add_shortcode( 'page_link', 'footer_text_shortcode_permalink' );
 }
 add_action( 'init', 'add_footer_text_shortcodes' );
+
+endif;
