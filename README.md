@@ -34,11 +34,11 @@ You can use the `footer_text()` function to display the footer text, or the `get
 
 However, if the plugin isn't active, the template tag will result in an error. To solve this, you can use this code instead:
 
-   <?php if ( function_exists( 'footer_text' ) ) footer_text(); ?>
+    <?php if ( function_exists( 'footer_text' ) ) footer_text(); ?>
 
 ### Can I bundle this plugin with my theme so users don't need to install this plugin?
 
-Sure thing! Just follow the instructions in the **Installation** section.
+Sure thing! Just follow the instructions in the [Installation](#installation) section.
 
 ## Changelog
 
