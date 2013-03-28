@@ -41,7 +41,7 @@ However, if the plugin isn't active, the template tag will result in an error. T
 
 = Can I bundle this plugin with my theme so users don't need to install this plugin? =
 
-Sure thing! Just follow the instructions in the **Installation** section.
+Sure thing! Just follow the instructions in the [Installation](#installation) section.
 
 == Changelog ==
 
