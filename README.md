@@ -5,7 +5,7 @@
 * __Stable version:__ [1.0](http://download.wordpress.org/plugin/footer-text.latest-stable.zip)
 * __License:__ [MIT](license.txt)
 
-Allow changing of the front-end footer text easily from the dashboard
+Allow changing of the theme footer text easily from the dashboard
 
 ## Description
 

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Footer Text
  * Plugin URI: http://bungeshea.com/plugins/footer-text/
- * Description: Allow changing of the footer text easily from the dashboard
+ * Description: Allow changing of the theme footer text easily from the dashboard
  * Author: Shea Bunge
  * Author URI: http://bungeshea.com
  * License: MIT
@@ -16,7 +16,7 @@
  * Add the footer text options page to
  * the 'Appearance' dashboard menu
  *
- * @uses add_theme_page() To register the new submenu
+ * @uses add_theme_page() To register the new sub-menu
  *
  * @return void
  *
@@ -74,6 +74,7 @@ function render_footer_text_options_page() {
  * Fetches the footer text from the database
  * with formatting functions applied
  *
+ * @param string $default What to use if no footer text is set
  * @return string The formatted footer text
  *
  * @since 1.0
@@ -112,8 +113,6 @@ function footer_text( $before = '', $after = '', $default = '' ) {
 }
 
 /** Shortcodes ********************************************************/
-
-if ( function_exists( 'add_shortcode' ) ) :
 
 /**
  * Returns a formatted link to
@@ -225,5 +224,3 @@ function footer_text_post_content_add_shortcodes( $content ) {
 	return $content;
 }
 add_filter( 'the_content', 'footer_text_post_content_add_shortcodes', 99 );
-
-endif; // end function exists add_shortcode()
