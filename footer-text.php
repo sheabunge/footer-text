@@ -157,6 +157,22 @@ function footer_text_shortcode_current_year() {
 }
 
 /**
+ * Returns an array of the shortcode tags to run
+ * on the footer text, paired with their callbacks
+ *
+ * @return array
+ *
+ * @since 1.0
+ */
+function get_footer_text_shortcode_tags() {
+	return apply_filters( 'footer_text_shortcode_tags', array(
+		'last_modified' => 'footer_text_shortcode_last_modified',
+		'page_link' => 'footer_text_shortcode_last_modified',
+		'year' => 'footer_text_shortcode_current_year',
+	) );
+}
+
+/**
  * Registers our shortcodes with WordPress
  *
  * @uses add_shortcode()
@@ -164,9 +180,10 @@ function footer_text_shortcode_current_year() {
  * @since 1.0
  */
 function add_footer_text_shortcodes() {
-	add_shortcode( 'last_modified', 'footer_text_shortcode_last_modified' );
-	add_shortcode( 'page_link', 'footer_text_shortcode_permalink' );
-	add_shortcode( 'year', 'footer_text_shortcode_current_year' );
+	$shortcode_tags = get_footer_text_shortcode_tags();
+
+	foreach ( $shortcode_tags as $shortcode_tag => $callback )
+		add_shortcode( $shortcode_tag, $callback );
 }
 add_action( 'init', 'add_footer_text_shortcodes' );
 
@@ -174,24 +191,20 @@ add_action( 'init', 'add_footer_text_shortcodes' );
  * Removes our custom shortcodes from the post content
  * so they don't interfere with anything
  *
- * @see http://justintadlock.com/archives/2013/01/08/disallow-specific-shortcodes-in-post-content
+ * @link http://justintadlock.com/archives/2013/01/08/disallow-specific-shortcodes-in-post-content
  *
  * @since 1.0
  */
 function footer_text_post_content_remove_shortcodes( $content ) {
 
-	/* Create an array of all the shortcode tags. */
-	$shortcode_tags = array(
-		'last_modified',
-		'page_link',
-		'year',
-	);
+	/* Retrieve an array of all the shortcode tags */
+	$shortcode_tags = get_footer_text_shortcode_tags();
 
-	/* Loop through the shortcodes and remove them. */
-	foreach ( $shortcode_tags as $shortcode_tag )
+	/* Loop through the shortcodes and remove them */
+	foreach ( $shortcode_tags as $shortcode_tag => $callback )
 		remove_shortcode( $shortcode_tag );
 
-	/* Return the post content. */
+	/* Return the post content */
 	return $content;
 }
 add_filter( 'the_content', 'footer_text_post_content_remove_shortcodes', 0 );
