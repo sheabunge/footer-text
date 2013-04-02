@@ -145,6 +145,18 @@ function footer_text_shortcode_last_modified() {
 }
 
 /**
+ * Returns the current year, ideal for
+ * a copyright notice
+ *
+ * @return string
+ *
+ * @since 1.0
+ */
+function footer_text_shortcode_current_year() {
+	return '<time>' . date( 'Y' ) . '</time>';
+}
+
+/**
  * Registers our shortcodes with WordPress
  *
  * @uses add_shortcode()
@@ -154,6 +166,7 @@ function footer_text_shortcode_last_modified() {
 function add_footer_text_shortcodes() {
 	add_shortcode( 'last_modified', 'footer_text_shortcode_last_modified' );
 	add_shortcode( 'page_link', 'footer_text_shortcode_permalink' );
+	add_shortcode( 'year', 'footer_text_shortcode_current_year' );
 }
 add_action( 'init', 'add_footer_text_shortcodes' );
 
@@ -171,6 +184,7 @@ function footer_text_post_content_remove_shortcodes( $content ) {
 	$shortcode_tags = array(
 		'last_modified',
 		'page_link',
+		'year',
 	);
 
 	/* Loop through the shortcodes and remove them. */
