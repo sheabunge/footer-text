@@ -167,7 +167,7 @@ function footer_text_shortcode_current_year() {
 function get_footer_text_shortcode_tags() {
 	return apply_filters( 'footer_text_shortcode_tags', array(
 		'last_modified' => 'footer_text_shortcode_last_modified',
-		'page_link' => 'footer_text_shortcode_last_modified',
+		'page_link' => 'footer_text_shortcode_permalink',
 		'year' => 'footer_text_shortcode_current_year',
 	) );
 }
