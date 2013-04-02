@@ -79,7 +79,15 @@ function render_footer_text_options_page() {
  * @since 1.0
  */
 function get_footer_text( $default = '' ) {
-	return apply_filters( 'the_content', get_option( 'theme_footer_text', $default ) );
+
+	// retrieve the footer text from the database
+	$footer_text = get_option( 'theme_footer_text', $default );
+
+	// format the text and apply shortcodes
+	$footer_text = do_shortcode( apply_filters( 'the_content', $footer_text ) );
+
+	// filter and return the text
+	return apply_filters( 'get_footer_text', $footer_text );
 }
 
 /**
@@ -149,4 +157,46 @@ function add_footer_text_shortcodes() {
 }
 add_action( 'init', 'add_footer_text_shortcodes' );
 
-endif;
+/**
+ * Removes our custom shortcodes from the post content
+ * so they don't interfere with anything
+ *
+ * @see http://justintadlock.com/archives/2013/01/08/disallow-specific-shortcodes-in-post-content
+ *
+ * @since 1.0
+ */
+function footer_text_post_content_remove_shortcodes( $content ) {
+
+	/* Create an array of all the shortcode tags. */
+	$shortcode_tags = array(
+		'last_modified',
+		'page_link',
+	);
+
+	/* Loop through the shortcodes and remove them. */
+	foreach ( $shortcode_tags as $shortcode_tag )
+		remove_shortcode( $shortcode_tag );
+
+	/* Return the post content. */
+	return $content;
+}
+add_filter( 'the_content', 'footer_text_post_content_remove_shortcodes', 0 );
+
+/**
+ * Adds our shortcodes back to the post content when it's safe
+ *
+ * @see http://justintadlock.com/archives/2013/01/08/disallow-specific-shortcodes-in-post-content
+ *
+ * @since 1.0
+ */
+function footer_text_post_content_add_shortcodes( $content ) {
+
+	/* Add the original shortcodes back. */
+	add_footer_text_shortcodes();
+
+	/* Return the post content. */
+	return $content;
+}
+add_filter( 'the_content', 'footer_text_post_content_add_shortcodes', 99 );
+
+endif; // end function exists add_shortcode()
