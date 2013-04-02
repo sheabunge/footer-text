@@ -43,6 +43,11 @@ However, if the plugin isn't active, the template tag will result in an error. T
 
 Sure thing! Just follow the instructions in the **Installation** section.
 
+== Screenshots ==
+
+1. Editing the footer text in the dashboard
+2. Previewing the footer text on the Twenty Eleven theme
+
 == Changelog ==
 
 = 1.0 =
