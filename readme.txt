@@ -12,7 +12,13 @@ Allow changing of the front-end footer text easily from the dashboard
 
 == Description ==
 
-Provides an interface in the dashboard, similar to the post edit screen, that allows you to easially change the text displayed in the footer on the front-end. After installing the plugin, add the `footer_text()` template tag to your `footer.php` theme template where you want the text to display.
+Provides an interface in the dashboard, similar to the post edit screen, that allows you to easily change the text displayed in the footer on the front-end. After installing the plugin, add the `footer_text()` template tag to your `footer.php` theme template where you want the text to display. For more options, see the [FAQ](http://wordpress.org/extend/plugins/footer-text/faq).
+
+You can use these shortcodes in the footer text editor:
+
+* `[last_modified]` the date that the current page was last modified on
+* `[page_link]` the full permalink of the current page, formatted
+* `[year]` the current year eg: 2013
 
 Visit the [plugin homepage](http://bungeshea.com/plugins/footer-text/), or contribute to its development at [GitHub](https://github.com/bungeshea/footer-text/).
 
@@ -20,7 +26,7 @@ Visit the [plugin homepage](http://bungeshea.com/plugins/footer-text/), or contr
 
 1. Upload `footer-text.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Visit *Appearence > Footer Text* to write your awesome footer text
+1. Visit *Appearance > Footer Text* to write your awesome footer text
 1. Place the `footer_text()` template tag somewhere in your theme where you want the text displayed
 1. Visit site. Observe.
 
@@ -39,9 +45,13 @@ However, if the plugin isn't active, the template tag will result in an error. T
 
    <?php if ( function_exists( 'footer_text' ) ) footer_text(); ?>
 
+The `get_footer_text()` function returns the formatted footer text and accepts one parameter: `$default`, which will be returned if no text is set
+
+The `footer_text()` function outputs the formatted footer text and accepts three parameters: `$before`, `$after` and `$default`. `$before` will be outputted *before* the text, `$after` will be outputted *after* the text, and `$default` will be used instead of the text is none is set. If no text is set `$default` is empty, nothing will be displayed.
+
 = Can I bundle this plugin with my theme so users don't need to install this plugin? =
 
-Sure thing! Just follow the instructions in the **Installation** section.
+Sure thing! Just follow the instructions in the [Installation](http://wordpress.org/extend/plugins/footer-text/installation) section.
 
 == Screenshots ==
 
