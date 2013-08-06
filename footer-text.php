@@ -10,7 +10,48 @@
  * Version: 1.0
  */
 
+/**
+ * Perform actions on WordPress init
+ *
+ * @since 1.0.1
+ */
+function footer_text_init() {
+
+	/*
+	 * Format the footer text by applying
+	 * the texturise filters that are applied to
+	 * post content. We could use `apply_filters( 'the_content' )`
+	 * but some plugins append things to this and we
+	 * don't want to break anything
+	 */
+	add_filter( 'get_footer_text', 'do_shortcode' );
+	add_filter( 'get_footer_text', 'wptexturize' );
+	add_filter( 'get_footer_text', 'convert_smilies' );
+	add_filter( 'get_footer_text', 'convert_chars' );
+	add_filter( 'get_footer_text', 'wpautop' );
+	add_filter( 'get_footer_text', 'shortcode_unautop' );
+	add_filter( 'get_footer_text', 'capital_P_dangit' );
+}
+add_action( 'init', 'footer_text_init' );
+
 /** Dashboard Administration Menu ********************************************/
+
+/**
+ * Registers the 'edit_footer_text' cap with WordPress
+ *
+ * @since 1.0.1
+ */
+function add_footer_text_caps() {
+	$roles = apply_filters( 'footer_text_roles', array( 'editor', 'administrator' ) );
+
+	foreach ( $roles as $role ) {
+		/* Retrieve the editor role to add the cap to */
+    	$role = get_role( $role );
+    	/* Add the capability to edit footer text */
+    	$role->add_cap( 'edit_footer_text' );
+    }
+}
+add_action( 'admin_init', 'add_footer_text_caps');
 
 /**
  * Add the footer text options page to
@@ -24,11 +65,11 @@
  */
 function add_footer_text_options_page() {
 	$theme_page = add_theme_page(
-		__( 'Footer Text', 'footer-text' ), // Name of page
-		__( 'Footer Text', 'footer-text' ), // Label in menu
-		'edit_theme_options',               // Capability required
-		'footer-text',                      // Menu slug, used to uniquely identify the page
-		'render_footer_text_options_page'   // Function that renders the options page
+		__( 'Footer Text', 'footer-text' ),
+		__( 'Footer Text', 'footer-text' ),
+		'edit_footer_text',
+		'footer-text',
+		'render_footer_text_options_page'
 	);
 }
 add_action( 'admin_menu', 'add_footer_text_options_page' );
@@ -57,7 +98,6 @@ function render_footer_text_options_page() {
 		<?php screen_icon(); ?>
 		<h2><?php _e( 'Footer Text', 'footer-text' ); ?></h2>
 
-
 		<form method="post" action="" style="margin: 20px 0;">
 			<?php
 				wp_editor( get_option( 'theme_footer_text', '' ), 'footer_text' );
@@ -83,9 +123,6 @@ function get_footer_text( $default = '' ) {
 
 	// retrieve the footer text from the database
 	$footer_text = get_option( 'theme_footer_text', $default );
-
-	// format the text and apply shortcodes
-	$footer_text = do_shortcode( apply_filters( 'the_content', $footer_text ) );
 
 	// filter and return the text
 	return apply_filters( 'get_footer_text', $footer_text );
@@ -192,6 +229,9 @@ add_action( 'init', 'add_footer_text_shortcodes' );
  *
  * @link http://justintadlock.com/archives/2013/01/08/disallow-specific-shortcodes-in-post-content
  *
+ * @param  string $content The post content with the custom shortcodes
+ * @return string The post content without the custom shortcodes
+ *
  * @since 1.0
  */
 function footer_text_post_content_remove_shortcodes( $content ) {
@@ -212,6 +252,9 @@ add_filter( 'the_content', 'footer_text_post_content_remove_shortcodes', 0 );
  * Adds our shortcodes back to the post content when it's safe
  *
  * @see http://justintadlock.com/archives/2013/01/08/disallow-specific-shortcodes-in-post-content
+ *
+ * @param  string $content The post content without the custom shortcodes
+ * @return string The post content with the custom shortcodes
  *
  * @since 1.0
  */
