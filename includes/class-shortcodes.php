@@ -31,9 +31,9 @@ class Footer_Text_Shortcodes {
 			)
 		);
 
-		add_action( 'init', 'add_shortcodes' );
-		add_filter( 'the_content', 'post_content_remove_shortcodes', 0 );
-		add_filter( 'the_content', 'post_content_add_shortcodes', 99 );
+		add_action( 'init', array( $this, 'add_shortcodes' ) );
+		add_filter( 'the_content', array( $this, 'post_content_remove_shortcodes' ), 0 );
+		add_filter( 'the_content', array( $this, 'post_content_add_shortcodes' ), 99 );
 	}
 
 	/**
