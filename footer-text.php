@@ -11,28 +11,33 @@
  */
 
 /**
- * Perform actions on WordPress init
+ * Format the footer text by applying the same filters that are
+ * used with post content.
+ *
+ * We could use `apply_filters( 'the_content' )` but some plugins
+ * do strange things to this and we don't want to break anything
  *
  * @since 1.0.1
  */
-function footer_text_init() {
+function footer_text_register_formatting_filters() {
 
-	/*
-	 * Format the footer text by applying
-	 * the texturise filters that are applied to
-	 * post content. We could use `apply_filters( 'the_content' )`
-	 * but some plugins append things to this and we
-	 * don't want to break anything
-	 */
-	add_filter( 'get_footer_text', 'do_shortcode' );
-	add_filter( 'get_footer_text', 'wptexturize' );
-	add_filter( 'get_footer_text', 'convert_smilies' );
-	add_filter( 'get_footer_text', 'convert_chars' );
-	add_filter( 'get_footer_text', 'wpautop' );
-	add_filter( 'get_footer_text', 'shortcode_unautop' );
-	add_filter( 'get_footer_text', 'capital_P_dangit' );
+	$filters = array(
+		'do_shortcode',
+		'wptexturize',
+		'convert_smilies',
+		'convert_chars',
+		'wpautop',
+		'shortcode_unautop',
+		'capital_P_dangit',
+	);
+
+	foreach ( $filters as $filter ) {
+		add_filter( 'get_footer_text', $filter );
+	}
+
 }
-add_action( 'init', 'footer_text_init' );
+
+add_action( 'init', 'footer_text_register_formatting_filters' );
 
 /** Dashboard Administration Menu ********************************************/
 
@@ -219,6 +224,7 @@ function add_footer_text_shortcodes() {
 	foreach ( $shortcode_tags as $shortcode_tag => $callback )
 		add_shortcode( $shortcode_tag, $callback );
 }
+
 add_action( 'init', 'add_footer_text_shortcodes' );
 
 /**
@@ -244,6 +250,7 @@ function footer_text_post_content_remove_shortcodes( $content ) {
 	/* Return the post content */
 	return $content;
 }
+
 add_filter( 'the_content', 'footer_text_post_content_remove_shortcodes', 0 );
 
 /**
@@ -264,4 +271,5 @@ function footer_text_post_content_add_shortcodes( $content ) {
 	/* Return the post content. */
 	return $content;
 }
+
 add_filter( 'the_content', 'footer_text_post_content_add_shortcodes', 99 );
