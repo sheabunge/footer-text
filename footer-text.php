@@ -138,19 +138,18 @@ function get_footer_text( $default = '' ) {
  *
  * @uses   get_footer_text() To retrieve the footer text
  *
+ * @param  string $default   What to display if no text is set
  * @param  string $before    The text to display before the footer text
  * @param  string $after     The text to display after the footer text
- * @param  string $default   What to display if no text is set
  * @return void
  *
  * @since  1.0
  */
-function footer_text( $before = '', $after = '', $default = '' ) {
-
+function footer_text( $default = '', $before = '', $after = '' ) {
 	$footer_text = get_footer_text( $default );
-	$output = ( empty( $footer_text ) ? '' : $before . $footer_text . $after );
 
-	echo $output;
+	if ( $footer_text )
+		echo $before . $footer_text . $after;
 }
 
 /** Shortcodes ********************************************************/
