@@ -11,7 +11,7 @@
  * We could use `apply_filters( 'the_content' )` but some plugins
  * do strange things to this and we don't want to break anything
  *
- * @since 1.0.1
+ * @since 2.0
  */
 function footer_text_register_formatting_filters() {
 

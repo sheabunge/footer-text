@@ -7,7 +7,7 @@
 /**
  * Registers the 'edit_footer_text' cap with WordPress
  *
- * @since 1.0.1
+ * @since 2.0
  */
 function add_footer_text_caps() {
 	$roles = apply_filters( 'footer_text_roles', array( 'editor', 'administrator' ) );

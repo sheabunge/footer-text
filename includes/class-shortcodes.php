@@ -9,7 +9,7 @@ class Footer_Text_Shortcodes {
 	 * The shortcode tags to run* on the footer text, paired with their callbacks
 	 *
 	 * @var    array
-	 * @since  1.0.1
+	 * @since  2.0
 	 * @access private
 	 */
 	private $shortcode_tags;
@@ -18,7 +18,7 @@ class Footer_Text_Shortcodes {
 	 * Constructor
 	 *
 	 * @param array $shortcode_tags The shortcode tags to be applied to the footer text
-	 * @since 1.0.1
+	 * @since 2.0
 	 */
 	function __construct( $shortcode_tags = array() ) {
 
