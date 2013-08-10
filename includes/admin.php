@@ -60,17 +60,16 @@ function render_footer_text_options_page() {
 	if ( isset( $_POST['footer_text'] ) )
 		update_option( 'theme_footer_text', stripslashes( $_POST['footer_text'] ) );
 
-	?>
-	<div class="wrap">
-		<?php screen_icon(); ?>
-		<h2><?php _e( 'Footer Text', 'footer-text' ); ?></h2>
+	echo '<div class="wrap">';
 
-		<form method="post" action="" style="margin: 20px 0;">
-			<?php
-				wp_editor( get_option( 'theme_footer_text', '' ), 'footer_text' );
-				submit_button();
-			?>
-		</form>
-	</div>
-	<?php
+	screen_icon();
+	printf ( '<h2>%s</h2>', __( 'Footer Text', 'footer-text' ) );
+
+	echo '<form method="post" action="" style="margin: 20px 0;">';
+
+	wp_editor( get_option( 'theme_footer_text', '' ), 'footer_text' );
+	submit_button();
+
+	echo '</form></div>';
+
 }
