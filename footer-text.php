@@ -18,9 +18,10 @@ require plugin_dir_path( __FILE__ ) . 'admin.php';
 /**
  * Shortcodes
  */
-require plugin_dir_path( __FILE__ ) . 'shortcodes.php';
+require plugin_dir_path( __FILE__ ) . 'class-shortcodes.php';
+$GLOBALS['footer_text_shortcodes'] = new Footer_Text_Shortcodes();
 
 /**
  * Template Tags
  */
-require plugin_dir_path( __FILE__ ) . 'template_tags.php';
+require plugin_dir_path( __FILE__ ) . 'template-tags.php';
