@@ -152,6 +152,12 @@ function footer_text( $default = '', $before = '', $after = '' ) {
 		echo $before . $footer_text . $after;
 }
 
+
+/**
+ * Add an action as an alternate way to add footer text
+ */
+add_action( 'footer_text', 'footer_text', $default, $before, $after );
+
 /** Shortcodes ********************************************************/
 
 /**
