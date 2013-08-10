@@ -74,4 +74,4 @@ function footer_text( $default = '', $before = '', $after = '' ) {
 /**
  * Add an action as an alternate way to add footer text
  */
-add_action( 'footer_text', 'footer_text', $default, $before, $after );
+add_action( 'footer_text', 'footer_text', 10, 3 );
