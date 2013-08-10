@@ -35,13 +35,15 @@ Visit the [plugin homepage](http://bungeshea.com/plugins/footer-text/), or contr
 = How can I display the footer text in my theme? =
 You can use the `footer_text()` function to display the footer text, or the `get_footer_text()` function to return it for use in PHP. These template tags should generally be used in the `footer.php` file of your theme.
 
-However, if the plugin isn't active, the template tag will result in an error. To solve this, you can use this code instead:
-
-	do_action( 'footer_text', $default, $before, $after );
+The `footer_text()` function outputs the formatted footer text and accepts three parameters: `$before`, `$after` and `$default`. `$before` will be outputted *before* the text, `$after` will be outputted *after* the text, and `$default` will be used instead of the text is none is set. If no text is set `$default` is empty, nothing will be displayed.
 
 The `get_footer_text()` function returns the formatted footer text and accepts one parameter: `$default`, which will be returned if no text is set.
 
-The `footer_text()` function outputs the formatted footer text and accepts three parameters: `$before`, `$after` and `$default`. `$before` will be outputted *before* the text, `$after` will be outputted *after* the text, and `$default` will be used instead of the text is none is set. If no text is set `$default` is empty, nothing will be displayed.
+If the plugin isn't active, the template tag will result in an error. To solve this, you can use an action hook instead:
+
+	do_action( 'footer_text', $default, $before, $after );
+
+This works the same as calling the `footer_text()` function, and any of the three arguments can be omitted.
 
 == Screenshots ==
 
