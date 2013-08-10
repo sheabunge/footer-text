@@ -13,15 +13,15 @@
 /**
  * Administration
  */
-require plugin_dir_path( __FILE__ ) . 'admin.php';
+require plugin_dir_path( __FILE__ ) . 'includes/admin.php';
 
 /**
  * Shortcodes
  */
-require plugin_dir_path( __FILE__ ) . 'class-shortcodes.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-shortcodes.php';
 $GLOBALS['footer_text_shortcodes'] = new Footer_Text_Shortcodes();
 
 /**
  * Template Tags
  */
-require plugin_dir_path( __FILE__ ) . 'template-tags.php';
+require plugin_dir_path( __FILE__ ) . 'includes/template-tags.php';
