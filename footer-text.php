@@ -155,11 +155,15 @@ function footer_text( $before = '', $after = '', $default = '' ) {
  * the current page's permalink
  *
  * @uses   get_permalink()
+ *
+ * @param  array  $atts    Unused
+ * @param  string $content The text the shortcode is wrapped around
  * @return string
+ *
  * @since  1.0
  */
-function footer_text_shortcode_permalink() {
-	$label = ( isset( $atts ) ? (string) $atts : get_permalink() );
+function footer_text_shortcode_permalink( $atts, $content ) {
+	$label = ! empty( $content ) ? $content : get_permalink();
 	return sprintf ( '<a href="%1$s">%2$s</a>', get_permalink(), $label );
 }
 
