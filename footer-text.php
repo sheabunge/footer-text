@@ -27,3 +27,13 @@ $GLOBALS['footer_text_shortcodes'] = new Footer_Text_Shortcodes();
  * Template Tags
  */
 require plugin_dir_path( __FILE__ ) . 'includes/template-tags.php';
+
+
+/**
+ * Load the plugin textdomain
+ */
+function load_footer_text_textdomain() {
+	load_plugin_textdomain( 'footer-text', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action( 'plugins_loaded', 'load_footer_text_textdomain' );
