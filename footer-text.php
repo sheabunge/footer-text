@@ -8,6 +8,8 @@
  * License:     MIT
  * License URI: http://opensource.org/licenses/MIT
  * Version:     1.0
+ * Text Domain: footer-text
+ * Domain Path: /languages
  */
 
 /**
