@@ -1,0 +1,29 @@
+{
+  "name": "footer-text",
+  "version": "2.0.0",
+  "description": "Allow changing of the theme footer text easily from the dashboard.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bungeshea/footer-text.git"
+  },
+  "keywords": [
+    "wordpress-plugin"
+  ],
+  "author": "Shea Bunge <info@bungeshea.com> (http://bungeshea.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bungeshea/footer-text/issues"
+  },
+  "homepage": "https://github.com/bungeshea/footer-text",
+  "devDependencies": {
+    "grunt": "^0.4.2",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-po2mo": "^0.1.0",
+    "grunt-pot": "^0.1.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-checktextdomain": "^0.1.1",
+    "grunt-newer": "^0.6.1",
+    "load-grunt-tasks": "^0.3.0",
+    "grunt-wp-deploy": "^0.3.0"
+  }
+}
