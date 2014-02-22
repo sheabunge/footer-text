@@ -1,12 +1,12 @@
 === Footer Text ===
-Contributors:      bungeshea
-Donate link:       http://bungeshea.com/donate/
-Tags:              front-end, footer, admin, dashboard, visual, theme, footer text, shortcodes, template tags
+Contributors: bungeshea
+Donate link: http://bungeshea.com/donate/
+Tags: front-end, footer, admin, dashboard, visual, theme, footer text, shortcodes, template tags
 Requires at least: 3.3
-Tested up to:      3.6
-Stable tag:        2.0
-License:           MIT
-License URI:       license.txt
+Tested up to: 3.8
+Stable tag: 2.0.0
+License: MIT
+License URI: license.txt
 
 Allow changing of the theme footer text easily from the dashboard
 
@@ -52,17 +52,18 @@ This works the same as calling the `footer_text()` function, and any of the thre
 
 == Changelog ==
 
-= 2.0 =
+= 2.0.0 =
 * Delete footer text from database on uninstall
-* Add an action as an alternate way to display footer text
+* Added an action as an alternate way to display footer text
 * Restructured code
 * Fixed [page_link] shortcode
 * Added custom 'edit_footer_text' capability
+* Added support for translations
 
-= 1.0 =
+= 1.0.0 =
 * Initial release
 
 == Upgrade Notice ==
 
-= 2.0 =
+= 2.0.0 =
 Lots of improvements; read the changelog

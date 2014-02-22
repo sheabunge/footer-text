@@ -1,8 +1,8 @@
 # Footer Text
 
 * __Requires at least:__ WordPress 3.3 or later
-* __Tested up to:__ WordPress 3.6
-* __Stable version:__ [2.0](http://download.wordpress.org/plugin/footer-text.latest-stable.zip)
+* __Tested up to:__ WordPress 3.8
+* __Stable version:__ [2.0.0](http://download.wordpress.org/plugin/footer-text.latest-stable.zip)
 * __License:__ [MIT](license.txt)
 
 Allow changing of the theme footer text easily from the dashboard
@@ -43,6 +43,20 @@ If the plugin isn't active, the template tag will result in an error. To solve t
 	do_action( 'footer_text', $default, $before, $after );
 
 This works the same as calling the `footer_text()` function, and any of the three arguments can be omitted.
+
+## Changelog
+
+
+### 2.0.0
+* Delete footer text from database on uninstall
+* Added an action as an alternate way to display footer text
+* Restructured code
+* Fixed [page_link] shortcode
+* Added custom 'edit_footer_text' capability
+* Added support for translations
+
+### 1.0.0
+* Initial release
 
 ## Screenshots
 
