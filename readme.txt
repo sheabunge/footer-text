@@ -48,7 +48,7 @@ This works the same as calling the `footer_text()` function, and any of the thre
 == Screenshots ==
 
 1. Editing the footer text in the dashboard
-2. Previewing the footer text on the Twenty Eleven theme
+2. Previewing the footer text on the Twenty Thirteen theme
 
 == Changelog ==
 

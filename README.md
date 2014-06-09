@@ -63,5 +63,5 @@ This works the same as calling the `footer_text()` function, and any of the thre
 ### Editing the footer text in the dashboard
 ![Editing the footer text in the dashboard](screenshot-1.png "Editing the footer text in the dashboard")
 
-### Previewing the footer text on the Twenty Eleven theme
-![Previewing the footer text on the Twenty Eleven theme](screenshot-2.png "Previewing the footer text on the Twenty Eleven theme")
+### Previewing the footer text on the Twenty Thirteen theme
+![Previewing the footer text on the Twenty Thirteen theme](screenshot-2.png "Previewing the footer text on the Twenty Thirteen theme")
