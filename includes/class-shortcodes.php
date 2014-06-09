@@ -97,8 +97,9 @@ class Footer_Text_Shortcodes {
 	function add_shortcodes() {
 		$shortcode_tags = $this->get_shortcode_tags();
 
-		foreach ( $shortcode_tags as $shortcode_tag => $callback )
+		foreach ( $shortcode_tags as $shortcode_tag => $callback ) {
 			add_shortcode( $shortcode_tag, $callback );
+		}
 	}
 
 	/**
@@ -118,8 +119,9 @@ class Footer_Text_Shortcodes {
 		$shortcode_tags = $this->get_shortcode_tags();
 
 		/* Loop through the shortcodes and remove them */
-		foreach ( $shortcode_tags as $shortcode_tag => $callback )
+		foreach ( $shortcode_tags as $shortcode_tag => $callback ) {
 			remove_shortcode( $shortcode_tag );
+		}
 
 		/* Return the post content */
 		return $content;

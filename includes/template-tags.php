@@ -67,8 +67,9 @@ function get_footer_text( $default = '' ) {
 function footer_text( $default = '', $before = '', $after = '' ) {
 	$footer_text = get_footer_text( $default );
 
-	if ( $footer_text )
+	if ( $footer_text ) {
 		echo $before . $footer_text . $after;
+	}
 }
 
 /**

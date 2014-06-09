@@ -20,6 +20,7 @@ function add_footer_text_caps() {
 		$role->add_cap( 'edit_footer_text' );
 	}
 }
+
 add_action( 'admin_init', 'add_footer_text_caps');
 
 /**
@@ -39,6 +40,7 @@ function add_footer_text_options_page() {
 		'render_footer_text_options_page'
 	);
 }
+
 add_action( 'admin_menu', 'add_footer_text_options_page' );
 
 /**
@@ -57,8 +59,9 @@ add_action( 'admin_menu', 'add_footer_text_options_page' );
  */
 function render_footer_text_options_page() {
 
-	if ( isset( $_POST['footer_text'] ) )
+	if ( isset( $_POST['footer_text'] ) ) {
 		update_option( 'theme_footer_text', stripslashes( $_POST['footer_text'] ) );
+	}
 
 	echo '<div class="wrap">';
 
