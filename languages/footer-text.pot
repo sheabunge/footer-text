@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: footer-text 2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-11 19:25+1100\n"
+"POT-Creation-Date: 2014-06-09 01:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: includes/admin.php:35 includes/admin.php:36 includes/admin.php:66
+#: includes/admin.php:36 includes/admin.php:37 includes/admin.php:69
 msgid "Footer Text"
 msgstr ""

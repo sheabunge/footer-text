@@ -2,7 +2,7 @@
 
 * __Requires at least:__ WordPress 3.3 or later
 * __Tested up to:__ WordPress 3.9.1
-* __Stable version:__ [2.0.0](http://download.wordpress.org/plugin/footer-text.latest-stable.zip)
+* __Stable version:__ [2.0.1](http://download.wordpress.org/plugin/footer-text.latest-stable.zip)
 * __License:__ [MIT](license.txt)
 
 Allow changing of the theme footer text easily from the dashboard
@@ -46,6 +46,9 @@ This works the same as calling the `footer_text()` function, and any of the thre
 
 ## Changelog
 
+### 2.0.1
+* Update screenshots for WordPress 3.9
+* Add braces to one-line conditionals
 
 ### 2.0.0
 * Delete footer text from database on uninstall

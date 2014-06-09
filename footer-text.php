@@ -7,7 +7,7 @@
  * Author URI:  http://bungeshea.com
  * License:     MIT
  * License URI: http://opensource.org/licenses/MIT
- * Version:     2.0.0
+ * Version:     2.0.1
  * Text Domain: footer-text
  * Domain Path: /languages
  */
