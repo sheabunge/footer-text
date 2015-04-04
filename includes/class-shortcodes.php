@@ -62,7 +62,13 @@ class Footer_Text_Shortcodes {
 	 * @since  1.0
 	 */
 	function shortcode_last_modified() {
-		return the_modified_date( 'd/m/Y', '<time>', '</time>', false );
+
+		$open_el = sprintf (
+			'<time datetime="%s">',
+			get_the_modified_date( 'Y-m-d' )
+		);
+
+		return the_modified_date( '',  $open_el, '</time>', false );
 	}
 
 	/**
