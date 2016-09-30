@@ -37,19 +37,19 @@ module.exports = function(grunt) {
 			options: {
 				text_domain: 'footer-text',
 				dest: 'languages/',
-				keywords: ['__','_e','esc_html__','esc_html_e','esc_attr__', 'esc_attr_e', 'esc_attr_x', 'esc_html_x', 'ngettext', '_n', '_ex', '_nx'],
+				keywords: ['__','_e','esc_html__','esc_html_e','esc_attr__', 'esc_attr_e', 'esc_attr_x', 'esc_html_x', 'ngettext', '_n', '_ex', '_nx']
 			},
 			files: {
 				src: ['**/*.php', '!node_modules/**/*.php', '!build/**/*.php'],
-				expand: true,
-			},
+				expand: true
+			}
 		},
 
 		po2mo: {
 			files: {
 				src: 'languages/*.po',
-				expand: true,
-			},
+				expand: true
+			}
 		},
 
 		clean: {
