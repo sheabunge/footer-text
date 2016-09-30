@@ -2,7 +2,7 @@
 
 * __Requires at least:__ WordPress 3.3 or later
 * __Tested up to:__ WordPress 4.3
-* __Stable version:__ [2.0.1](http://download.wordpress.org/plugin/footer-text.latest-stable.zip)
+* __Stable version:__ [2.0.1](https://download.wordpress.org/plugin/footer-text.latest-stable.zip)
 * __License:__ [MIT](license.txt)
 
 Allow changing of the theme footer text easily from the dashboard
@@ -17,7 +17,7 @@ You can use these shortcodes in the footer text editor:
 * `[page_link]` the full permalink of the current page, formatted. The content wrapped in this shortcode will be used as the link text
 * `[year]` the current year eg: 2013
 
-Visit the [plugin homepage](http://bungeshea.com/plugins/footer-text/), or review it on [WordPress.org](https://github.com/bungeshea/footer-text/).
+Visit the [plugin homepage](https://bungeshea.com/plugins/footer-text/), or review it on [WordPress.org](https://github.com/bungeshea/footer-text/).
 
 ## Installation
 
