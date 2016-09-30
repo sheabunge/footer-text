@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: Footer Text
  * Plugin URI:  http://bungeshea.com/plugins/footer-text/
@@ -15,19 +16,18 @@
 /**
  * Administration
  */
-require plugin_dir_path( __FILE__ ) . 'includes/admin.php';
+require dirname( __FILE__ ) . '/includes/admin.php';
 
 /**
  * Shortcodes
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-shortcodes.php';
+require dirname( __FILE__ ) . '/includes/class-shortcodes.php';
 $GLOBALS['footer_text_shortcodes'] = new Footer_Text_Shortcodes();
 
 /**
  * Template Tags
  */
-require plugin_dir_path( __FILE__ ) . 'includes/template-tags.php';
-
+require dirname( __FILE__ ) . '/includes/template-tags.php';
 
 /**
  * Load the plugin textdomain
