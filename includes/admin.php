@@ -64,9 +64,7 @@ function render_footer_text_options_page() {
 	}
 
 	echo '<div class="wrap">';
-
-	screen_icon();
-	printf ( '<h2>%s</h2>', __( 'Footer Text', 'footer-text' ) );
+	printf ( '<h1>%s</h1>', __( 'Footer Text', 'footer-text' ) );
 
 	echo '<form method="post" action="" style="margin: 20px 0;">';
 
