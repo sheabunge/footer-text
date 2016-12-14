@@ -4,7 +4,7 @@ Donate link: https://bungeshea.com/donate/
 Tags: front-end, footer, admin, dashboard, visual, theme, footer text, shortcodes, template tags
 Requires at least: 3.3
 Tested up to: 4.7
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: MIT
 License URI: license.txt
 
@@ -51,6 +51,9 @@ This works the same as calling the `footer_text()` function, and any of the thre
 2. Previewing the footer text on the Twenty Thirteen theme
 
 == Changelog ==
+
+= 2.0.2 =
+* Use a `<h1>` heading on administration pages
 
 = 2.0.1 =
 * Update screenshots for WordPress 3.9

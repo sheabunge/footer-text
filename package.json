@@ -1,6 +1,6 @@
 {
   "name": "footer-text",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Allow changing of the theme footer text easily from the dashboard.",
   "repository": {
     "type": "git",

@@ -2,7 +2,7 @@
 
 * __Requires at least:__ WordPress 3.3 or later
 * __Tested up to:__ WordPress 4.7
-* __Stable version:__ [2.0.1](https://download.wordpress.org/plugin/footer-text.latest-stable.zip)
+* __Stable version:__ [2.0.2](https://download.wordpress.org/plugin/footer-text.latest-stable.zip)
 * __License:__ [MIT](license.txt)
 
 Allow changing of the theme footer text easily from the dashboard
@@ -45,6 +45,9 @@ If the plugin isn't active, the template tag will result in an error. To solve t
 This works the same as calling the `footer_text()` function, and any of the three arguments can be omitted.
 
 ## Changelog
+
+### 2.0.2
+* Use a `<h1>` heading on administration pages
 
 ### 2.0.1
 * Update screenshots for WordPress 3.9
