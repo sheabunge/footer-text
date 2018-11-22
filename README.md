@@ -1,7 +1,7 @@
 # Footer Text
 
 * __Requires at least:__ WordPress 3.3 or later
-* __Tested up to:__ WordPress 4.9.2
+* __Tested up to:__ WordPress 5.0
 * __Stable version:__ [2.0.2](https://download.wordpress.org/plugin/footer-text.latest-stable.zip)
 * __License:__ [MIT](license.txt)
 

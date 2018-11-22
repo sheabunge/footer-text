@@ -3,8 +3,9 @@ Contributors: bungeshea
 Donate link: https://bungeshea.com/donate/
 Tags: front-end, footer, admin, dashboard, visual, theme, footer text, shortcodes, template tags
 Requires at least: 3.3
-Tested up to: 4.9.2
+Tested up to: 5.0
 Stable tag: 2.0.2
+Requires PHP: 5.2
 License: MIT
 License URI: license.txt
 

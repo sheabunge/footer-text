@@ -28,7 +28,6 @@ $GLOBALS['footer_text_shortcodes'] = new Footer_Text_Shortcodes();
  */
 require plugin_dir_path( __FILE__ ) . 'includes/template-tags.php';
 
-
 /**
  * Load the plugin textdomain
  */
