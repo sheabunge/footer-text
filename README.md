@@ -17,7 +17,7 @@ You can use these shortcodes in the footer text editor:
 * `[page_link]` the full permalink of the current page, formatted. The content wrapped in this shortcode will be used as the link text
 * `[year]` the current year eg: 2013
 
-Visit the [plugin homepage](https://bungeshea.com/plugins/footer-text/), or review it on [WordPress.org](https://github.com/bungeshea/footer-text/).
+Visit the [plugin homepage](https://sheabunge.com/plugins/footer-text/), or review it on [WordPress.org](https://github.com/sheabunge/footer-text/).
 
 ## Installation
 

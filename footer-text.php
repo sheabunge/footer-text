@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Footer Text
- * Plugin URI:  https://bungeshea.com/plugins/footer-text/
+ * Plugin URI:  https://sheabunge.com/plugins/footer-text/
  * Description: Allow changing of the theme footer text easily from the dashboard
  * Author:      Shea Bunge
- * Author URI:  https://bungeshea.com
+ * Author URI:  https://sheabunge.com
  * License:     MIT
  * License URI: https://opensource.org/licenses/MIT
  * Version:     2.0.2

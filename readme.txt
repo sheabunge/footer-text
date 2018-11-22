@@ -1,6 +1,6 @@
 === Footer Text ===
 Contributors: bungeshea
-Donate link: https://bungeshea.com/donate/
+Donate link: https://sheabunge.com/donate/
 Tags: front-end, footer, admin, dashboard, visual, theme, footer text, shortcodes, template tags
 Requires at least: 3.3
 Tested up to: 5.0
@@ -21,7 +21,7 @@ You can use these shortcodes in the footer text editor:
 * `[page_link]` the full permalink of the current page, formatted. The content wrapped in this shortcode will be used as the link text
 * `[year]` the current year eg: 2013
 
-Visit the [plugin homepage](https://bungeshea.com/plugins/footer-text/), or contribute to its development at [GitHub](https://github.com/bungeshea/footer-text).
+Visit the [plugin homepage](https://sheabunge.com/plugins/footer-text/), or contribute to its development at [GitHub](https://github.com/sheabunge/footer-text).
 
 == Installation ==
 
