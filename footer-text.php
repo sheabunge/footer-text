@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Footer Text
- * Plugin URI:  https://sheabunge.com/plugins/footer-text/
+ * Plugin URI:  https://github.com/sheabunge/footer-text
  * Description: Allow changing of the theme footer text easily from the dashboard
  * Author:      Shea Bunge
  * Author URI:  https://sheabunge.com

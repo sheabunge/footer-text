@@ -2,6 +2,8 @@
 
 /**
  * Template Tags
+ *
+ * @package Footer_Text
  */
 
 /**
@@ -37,7 +39,8 @@ add_action( 'init', 'footer_text_register_formatting_filters' );
  * Fetches the footer text from the database
  * with formatting functions applied
  *
- * @param  string $default What to use if no footer text is set
+ * @param string $default What to use if no footer text is set
+ *
  * @return string          The formatted footer text
  *
  * @since  1.0
@@ -55,12 +58,13 @@ function get_footer_text( $default = '' ) {
  * Retrieves the footer text and displays it if it is set
  * Nothing is displayed if the footer text is not set
  *
- * @uses   get_footer_text() To retrieve the footer text
+ * @param string $default What to display if no text is set
+ * @param string $before  The text to display before the footer text
+ * @param string $after   The text to display after the footer text
  *
- * @param  string $default   What to display if no text is set
- * @param  string $before    The text to display before the footer text
- * @param  string $after     The text to display after the footer text
  * @return void
+ *
+ * @uses   get_footer_text() To retrieve the footer text
  *
  * @since  1.0
  */
