@@ -4,7 +4,7 @@ Donate link: https://sheabunge.com/donate/
 Tags: front-end, footer, admin, dashboard, visual, theme, footer text, shortcodes, template tags
 Requires at least: 3.3
 Tested up to: 5.6
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 Requires PHP: 5.2
 License: MIT
 License URI: license.txt
@@ -52,6 +52,9 @@ This works the same as calling the `footer_text()` function, and any of the thre
 2. Previewing the footer text on the Twenty Thirteen theme
 
 == Changelog ==
+
+= 2.0.3 =
+* Added a message when the text is updated.
 
 = 2.0.2 =
 * Use a `<h1>` heading on administration pages
