@@ -2,6 +2,8 @@
 
 /**
  * Handles the shortcodes used by this plugin
+ *
+ * @package Footer_Text
  */
 class Footer_Text_Shortcodes {
 
@@ -18,6 +20,7 @@ class Footer_Text_Shortcodes {
 	 * Constructor
 	 *
 	 * @param array $shortcode_tags The shortcode tags to be applied to the footer text
+	 *
 	 * @since 2.0
 	 */
 	function __construct( $shortcode_tags = array() ) {
@@ -40,35 +43,36 @@ class Footer_Text_Shortcodes {
 	 * Returns a formatted link to
 	 * the current page's permalink
 	 *
-	 * @uses   get_permalink()
+	 * @param array  $atts    Unused
+	 * @param string $content The text the shortcode is wrapped around
 	 *
-	 * @param  array  $atts    Unused
-	 * @param  string $content The text the shortcode is wrapped around
 	 * @return string
+	 *
+	 * @uses   get_permalink()
 	 *
 	 * @since  1.0
 	 */
 	function shortcode_permalink( $atts, $content ) {
 		$label = ! empty( $content ) ? $content : get_permalink();
-		return sprintf ( '<a href="%1$s">%2$s</a>', get_permalink(), $label );
+		return sprintf( '<a href="%1$s">%2$s</a>', get_permalink(), $label );
 	}
 
 	/**
 	 * Returns the date when the current page
 	 * was last modified
 	 *
-	 * @uses   the_modified_date()
 	 * @return string
+	 * @uses   the_modified_date()
 	 * @since  1.0
 	 */
 	function shortcode_last_modified() {
 
-		$open_el = sprintf (
+		$open_el = sprintf(
 			'<time datetime="%s">',
 			get_the_modified_date( 'Y-m-d' )
 		);
 
-		return the_modified_date( '',  $open_el, '</time>', false );
+		return the_modified_date( '', $open_el, '</time>', false );
 	}
 
 	/**
@@ -79,7 +83,7 @@ class Footer_Text_Shortcodes {
 	 * @since  1.0
 	 */
 	function shortcode_current_year() {
-		return sprintf ( '<time>%s</time>', date( 'Y' ) );
+		return sprintf( '<time>%s</time>', date( 'Y' ) );
 	}
 
 	/**
@@ -114,7 +118,8 @@ class Footer_Text_Shortcodes {
 	 *
 	 * @link   http://justintadlock.com/archives/2013/01/08/disallow-specific-shortcodes-in-post-content
 	 *
-	 * @param  string $content The post content with the custom shortcodes
+	 * @param string $content The post content with the custom shortcodes
+	 *
 	 * @return string          The post content without the custom shortcodes
 	 *
 	 * @since  1.0
@@ -138,7 +143,8 @@ class Footer_Text_Shortcodes {
 	 *
 	 * @see    http://justintadlock.com/archives/2013/01/08/disallow-specific-shortcodes-in-post-content
 	 *
-	 * @param  string $content The post content without the custom shortcodes
+	 * @param string $content The post content without the custom shortcodes
+	 *
 	 * @return string          The post content with the custom shortcodes
 	 *
 	 * @since  1.0
@@ -151,5 +157,4 @@ class Footer_Text_Shortcodes {
 		/* Return the post content. */
 		return $content;
 	}
-
 }

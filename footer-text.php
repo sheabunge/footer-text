@@ -2,13 +2,13 @@
 
 /**
  * Plugin Name: Footer Text
- * Plugin URI:  http://bungeshea.com/plugins/footer-text/
+ * Plugin URI:  https://github.com/sheabunge/footer-text
  * Description: Allow changing of the theme footer text easily from the dashboard
  * Author:      Shea Bunge
- * Author URI:  http://bungeshea.com
+ * Author URI:  https://sheabunge.com
  * License:     MIT
- * License URI: http://opensource.org/licenses/MIT
- * Version:     2.0.1
+ * License URI: https://opensource.org/licenses/MIT
+ * Version:     2.0.2
  * Text Domain: footer-text
  * Domain Path: /languages
  */

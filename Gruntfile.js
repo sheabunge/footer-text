@@ -28,8 +28,8 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					src: ['**/*.php', '!node_modules/**/*.php', '!build/**/*.php'],
-					expand: true,
-				}],
+					expand: true
+				}]
 			}
 		},
 
@@ -37,27 +37,27 @@ module.exports = function(grunt) {
 			options: {
 				text_domain: 'footer-text',
 				dest: 'languages/',
-				keywords: ['__','_e','esc_html__','esc_html_e','esc_attr__', 'esc_attr_e', 'esc_attr_x', 'esc_html_x', 'ngettext', '_n', '_ex', '_nx'],
+				keywords: ['__','_e','esc_html__','esc_html_e','esc_attr__', 'esc_attr_e', 'esc_attr_x', 'esc_html_x', 'ngettext', '_n', '_ex', '_nx']
 			},
 			files: {
-				src: ['**/*.php', '!node_modules/**/*.php', '!build/**/*.php'],
-				expand: true,
-			},
+				src: ['*.php', 'includes/**/*.php'],
+				expand: true
+			}
 		},
 
 		po2mo: {
 			files: {
 				src: 'languages/*.po',
-				expand: true,
-			},
+				expand: true
+			}
 		},
 
 		clean: {
-			build: ['build']
+			package: ['package']
 		},
 
 		copy: {
-			build: {
+			package: {
 				src: [
 					'readme.txt',
 					'license.txt',
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
 					'includes/**/*',
 					'languages/**/*'
 				],
-				dest: 'build',
+				dest: 'package',
 				expand: true
 			}
 		},
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 				options: {
 					plugin_slug: 'footer-text',
 					svn_user: 'bungeshea',
-					build_dir: 'build'
+					build_dir: 'package'
 				}
 			}
 		}
@@ -85,6 +85,6 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask( 'l18n', ['checktextdomain', 'pot', 'newer:po2mo'] );
-	grunt.registerTask( 'build', ['clean:build', 'copy:build'] );
-	grunt.registerTask( 'default', ['l18n', 'build'] );
+	grunt.registerTask( 'package', ['clean:package', 'copy:package'] );
+	grunt.registerTask( 'default', ['l18n', 'package'] );
 };

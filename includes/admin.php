@@ -2,6 +2,8 @@
 
 /**
  * Dashboard Administration Menu
+ *
+ * @package Footer_Text
  */
 
 /**
@@ -21,14 +23,14 @@ function add_footer_text_caps() {
 	}
 }
 
-add_action( 'admin_init', 'add_footer_text_caps');
+add_action( 'admin_init', 'add_footer_text_caps' );
 
 /**
  * Add the footer text options page to
  * the 'Appearance' dashboard menu
  *
- * @uses   add_theme_page() To register the new sub-menu
  * @return void
+ * @uses   add_theme_page() To register the new sub-menu
  * @since  1.0
  */
 function add_footer_text_options_page() {
@@ -47,14 +49,14 @@ add_action( 'admin_menu', 'add_footer_text_options_page' );
  * Display the footer text options page
  * and save posted text to the database
  *
- * @uses   update_option() To save the text to the database
+ * @return void
+ *
  * @uses   screen_icon()   To display the dashboard menu icon
  * @uses   wp_editor()     For a visual editor
  * @uses   get_option()    To retrieve the current text from the database
  * @uses   submit_button() To generate a form submit button
  *
- * @return void
- *
+ * @uses   update_option() To save the text to the database
  * @since  1.0
  */
 function render_footer_text_options_page() {
@@ -64,9 +66,13 @@ function render_footer_text_options_page() {
 	}
 
 	echo '<div class="wrap">';
+	printf( '<h1>%s</h1>', __( 'Footer Text', 'footer-text' ) );
 
-	screen_icon();
-	printf ( '<h2>%s</h2>', __( 'Footer Text', 'footer-text' ) );
+	if ( isset( $_POST['footer_text'] ) ) {
+		echo '<div id="message" class="updated notice is-dismissible"><p>',
+		__( 'Updated successfully.', 'footer-text' ),
+		'</p></div>';
+	}
 
 	echo '<form method="post" action="" style="margin: 20px 0;">';
 

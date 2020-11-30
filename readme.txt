@@ -1,10 +1,11 @@
 === Footer Text ===
 Contributors: bungeshea
-Donate link: http://bungeshea.com/donate/
+Donate link: https://sheabunge.com/donate/
 Tags: front-end, footer, admin, dashboard, visual, theme, footer text, shortcodes, template tags
 Requires at least: 3.3
-Tested up to: 4.3
-Stable tag: 2.0.1
+Tested up to: 5.6
+Stable tag: 2.0.2
+Requires PHP: 5.2
 License: MIT
 License URI: license.txt
 
@@ -12,7 +13,7 @@ Allow changing of the theme footer text easily from the dashboard
 
 == Description ==
 
-Provides an interface in the dashboard, similar to the post edit screen, that allows you to easily change the text displayed in the footer on the front-end. After installing the plugin, add the `footer_text()` template tag to your `footer.php` theme template where you want the text to display. For more options, see the [FAQ](http://wordpress.org/plugins/footer-text/faq).
+Provides an interface in the dashboard, similar to the post edit screen, that allows you to easily change the text displayed in the footer on the front-end. After installing the plugin, add the `footer_text()` template tag to your `footer.php` theme template where you want the text to display. For more options, see the [FAQ](https://wordpress.org/plugins/footer-text/faq).
 
 You can use these shortcodes in the footer text editor:
 
@@ -20,7 +21,7 @@ You can use these shortcodes in the footer text editor:
 * `[page_link]` the full permalink of the current page, formatted. The content wrapped in this shortcode will be used as the link text
 * `[year]` the current year eg: 2013
 
-Visit the [plugin homepage](http://bungeshea.com/plugins/footer-text/), or contribute to its development at [GitHub](https://github.com/bungeshea/footer-text).
+Visit the [plugin homepage](https://sheabunge.com/plugins/footer-text/), or contribute to its development at [GitHub](https://github.com/sheabunge/footer-text).
 
 == Installation ==
 
@@ -51,6 +52,9 @@ This works the same as calling the `footer_text()` function, and any of the thre
 2. Previewing the footer text on the Twenty Thirteen theme
 
 == Changelog ==
+
+= 2.0.2 =
+* Use a `<h1>` heading on administration pages
 
 = 2.0.1 =
 * Update screenshots for WordPress 3.9
